@@ -131,5 +131,5 @@ Rules:
 ## 9. Build and verification
 
 - `pnpm build` and `pnpm build:tailwind` produce the files in section 2.
-- `sh script/check-build.sh` (run by `script/cibuild.sh`) fails if a mode class, a `--color-<mode>-main` token, or `.prose` is missing from either build.
-- `pnpm check` runs Prettier over `src/`.
+- `mise run cibuild` builds both files and runs `mise-tasks/check-build.sh`, which fails if a mode class, a `--color-<mode>-main` token, or `.prose` is missing from either build.
+- `mise run check` runs Prettier over `src/`.

@@ -19,7 +19,9 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
 
-      - run: sh script/cibuild.sh
+      - uses: jdx/mise-action@v2
+
+      - run: mise run cibuild
 
       - uses: JS-DevTools/npm-publish@v3
         with:

@@ -91,15 +91,17 @@ The full list of tokens is in [SPEC.md](SPEC.md#4-tokens).
 
 ## Development
 
-Requirements: Node.js and pnpm. The repository pins the pnpm version in `package.json` (`packageManager`), so Corepack (`corepack enable`) selects it automatically.
+Requirements: Node.js, pnpm, and [mise](https://mise.jdx.dev). The repository pins the pnpm version in `package.json` (`packageManager`), so Corepack (`corepack enable`) selects it automatically.
 
 ```bash
 pnpm install
-pnpm build          # dist/liturgia.css
-pnpm build:tailwind # dist/liturgia.tailwind.css
-pnpm check          # Prettier check on src/
-sh script/cibuild.sh # build both files and verify them
-pnpm docs           # serve the documentation locally (requires mkdocs)
+mise run build         # dist/liturgia.css
+mise run build:tailwind # dist/liturgia.tailwind.css
+mise run check         # Prettier check on src/
+mise run cibuild       # build both files and verify them
+mise run test          # check + cibuild
+mise run docs          # serve the documentation locally (requires mkdocs)
+mise tasks             # list all tasks
 ```
 
 Palette values live in `src/liturgia-colors.css`. Do not redefine them in `src/tailwind/`; the Tailwind theme files reference them.

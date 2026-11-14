@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/usr/bin/env bash
+#MISE description="Verify the built bundles contain the expected modes and tokens"
 
 set -e
 

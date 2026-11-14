@@ -1,0 +1,37 @@
+[tasks.build]
+description = "Build dist/liturgia.css"
+run = "pnpm build"
+
+[tasks."build:tailwind"]
+description = "Build dist/liturgia.tailwind.css"
+run = "pnpm build:tailwind"
+
+[tasks.check]
+description = "Check formatting of src/ with Prettier"
+run = "pnpm check"
+
+[tasks.cibuild]
+description = "Build both bundles and verify them"
+run = [{ task = "build" }, { task = "build:tailwind" }, { task = "check-build.sh" }]
+
+[tasks."cibuild:docs"]
+description = "Build the bundles into docs/build and the documentation site"
+run = [
+  { task = "build" },
+  { task = "build:tailwind" },
+  "mkdir -p docs/build",
+  "cp dist/liturgia.css dist/liturgia.tailwind.css docs/build/",
+  { task = "docs:build" },
+]
+
+[tasks.test]
+description = "Run the formatting check and both builds"
+run = [{ task = "check" }, { task = "cibuild" }]
+
+[tasks.docs]
+description = "Serve the documentation locally"
+run = "pnpm docs"
+
+[tasks."docs:build"]
+description = "Build the documentation site"
+run = "pnpm docs:build"
