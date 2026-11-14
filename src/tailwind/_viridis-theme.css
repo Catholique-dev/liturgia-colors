@@ -1,6 +1,5 @@
 @theme static {
-  /** TODO : replace viridis colors and grays
-    /** Override grayscale **/
+  /** Override grayscale **/
   --color-viridis-gray-50: oklch(98.5% 0 0);
   --color-viridis-gray-100: oklch(97% 0 0);
   --color-viridis-gray-200: oklch(92.2% 0 0);
@@ -14,9 +13,10 @@
   --color-viridis-gray-950: oklch(14.5% 0 0);
 
   /** Custom **/
-  --color-viridis-dark: #0c110a;
-  --color-viridis-gray: oklch(55.6% 0 0);
-  --color-viridis-light: #f9fdf6;
+  --color-viridis-light: var(--viridis-light);
+  --color-viridis-gray: var(--viridis-gray);
+  --color-viridis-dark: var(--viridis-dark);
+  --color-viridis-main: var(--viridis-main);
 
   --color-viridis-50: oklch(98.2% 0.018 155.826);
   --color-viridis-100: oklch(96.2% 0.044 156.743);

@@ -38,9 +38,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unicolored/liturgia-css.git"
+    "url": "git+https://github.com/unicolored/liturgia-colors.git"
   },
   "license": "MIT",
   "author": "Gilles Hoarau (https://github.com/unicolored)",
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "pnpm@12.18.0"
 }

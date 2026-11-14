@@ -1,6 +1,5 @@
 @theme static {
-  /** TODO : replace roseus colors and grays
-    /** Override grayscale **/
+  /** Override grayscale **/
   --color-roseus-gray-50: oklch(98.5% 0 0);
   --color-roseus-gray-100: oklch(96.7% 0.001 286.375);
   --color-roseus-gray-200: oklch(92% 0.004 286.32);
@@ -14,9 +13,10 @@
   --color-roseus-gray-950: oklch(14.1% 0.005 285.823);
 
   /** Custom **/
-  --color-roseus-dark: #0c110a;
-  --color-roseus-gray: oklch(55.2% 0.016 285.938);
-  --color-roseus-light: #f9fdf6;
+  --color-roseus-light: var(--roseus-light);
+  --color-roseus-gray: var(--roseus-gray);
+  --color-roseus-dark: var(--roseus-dark);
+  --color-roseus-main: var(--roseus-main);
 
   --color-roseus-50: oklch(97.1% 0.014 343.198);
   --color-roseus-100: oklch(94.8% 0.028 342.258);

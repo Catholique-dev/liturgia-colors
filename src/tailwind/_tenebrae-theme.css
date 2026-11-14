@@ -1,6 +1,5 @@
 @theme static {
-  /** TODO : replace tenebrae colors and grays
-    /** Override grayscale **/
+  /** Override grayscale **/
   --color-tenebrae-gray-50: oklch(98.4% 0.003 247.858);
   --color-tenebrae-gray-100: oklch(96.8% 0.007 247.896);
   --color-tenebrae-gray-200: oklch(92.9% 0.013 255.508);
@@ -14,9 +13,10 @@
   --color-tenebrae-gray-950: oklch(12.9% 0.042 264.695);
 
   /** Custom **/
-  --color-tenebrae-dark: #0c110a;
-  --color-tenebrae-gray: oklch(55.4% 0.046 257.417);
-  --color-tenebrae-light: #f9fdf6;
+  --color-tenebrae-light: var(--tenebrae-light);
+  --color-tenebrae-gray: var(--tenebrae-gray);
+  --color-tenebrae-dark: var(--tenebrae-dark);
+  --color-tenebrae-main: var(--tenebrae-main);
 
   --color-tenebrae-50: oklch(98.5% 0 0);
   --color-tenebrae-100: oklch(97% 0 0);

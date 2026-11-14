@@ -1,6 +1,5 @@
 @theme static {
-  /** TODO : replace violaceus colors and grays
-    /** Override grayscale **/
+  /** Override grayscale **/
   --color-violaceus-gray-50: oklch(98.5% 0 0);
   --color-violaceus-gray-100: oklch(97% 0 0);
   --color-violaceus-gray-200: oklch(92.2% 0 0);
@@ -14,9 +13,10 @@
   --color-violaceus-gray-950: oklch(14.5% 0 0);
 
   /** Custom **/
-  --color-violaceus-dark: #0c110a;
-  --color-violaceus-gray: #0c110a;
-  --color-violaceus-light: #f9fdf6;
+  --color-violaceus-light: var(--violaceus-light);
+  --color-violaceus-gray: var(--violaceus-gray);
+  --color-violaceus-dark: var(--violaceus-dark);
+  --color-violaceus-main: var(--violaceus-main);
 
   --color-violaceus-50: oklch(96.9% 0.016 293.756);
   --color-violaceus-100: oklch(94.3% 0.029 294.588);

@@ -6,10 +6,10 @@
   --albus-gray: #8e8877;
 
   /* Roseus (Rose) Palette */
-  --roseus-light: #e5d8db; /* TODO */
-  --roseus-dark: #2f1f25; /* TODO */
-  --roseus-main: #d491a1; /* TODO */
-  --roseus-gray: #888; /* TODO */
+  --roseus-light: #e5d8db;
+  --roseus-dark: #2f1f25;
+  --roseus-main: #d491a1;
+  --roseus-gray: #888;
 
   /* Ruber (Red) Palette */
   --ruber-light: #fdf7f6;
@@ -18,22 +18,26 @@
   --ruber-gray: #8f8685;
 
   /* Tenebrae (Black) Palette */
-  --tenebrae-light: #e8e8e8; /* TODO */
-  --tenebrae-dark: #1a1a1a; /* TODO */
-  --tenebrae-main: #5e5e5e; /* TODO */
-  --tenebrae-gray: #888; /* TODO */
+  --tenebrae-light: #e8e8e8;
+  --tenebrae-dark: #1a1a1a;
+  --tenebrae-main: #5e5e5e;
+  --tenebrae-gray: #888;
 
   /* Violaceus (Violet) Palette */
-  --violaceus-light: #ede4f0; /* TODO */
-  --violaceus-dark: #2d1f34; /* TODO */
-  --violaceus-main: #7d4a8f; /* TODO */
-  --violaceus-gray: #888; /* TODO */
+  --violaceus-light: #ede4f0;
+  --violaceus-dark: #2d1f34;
+  --violaceus-main: #7d4a8f;
+  --violaceus-gray: #888;
 
   /* Viridis (Green) Palette */
-  --viridis-light: #d1d8cc; /* TODO */
-  --viridis-dark: #1f2f1f; /* TODO */
-  --viridis-main: #487351; /* TODO */
-  --viridis-gray: #888; /* TODO */
+  --viridis-light: #d1d8cc;
+  --viridis-dark: #1f2f1f;
+  --viridis-main: #487351;
+  --viridis-gray: #888;
+
+  /* Font Tokens */
+  --font-family-heading: 'Cinzel', serif;
+  --font-family-paragraph: 'EB Garamond', serif;
 
   /* Design Tokens */
   --radius-default: 4px;
@@ -53,8 +57,11 @@
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --line-width-default: 2px;
+}
 
-  /* Default Theme (Albus) */
+/* Default Theme (Albus) */
+:root,
+.albus-mode {
   --color-light: var(--albus-light);
   --color-gray: var(--albus-gray);
   --color-dark: var(--albus-dark);

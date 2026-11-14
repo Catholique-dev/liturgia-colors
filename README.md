@@ -2,76 +2,108 @@
 
 [![NPM Publish](https://github.com/unicolored/liturgia-colors/actions/workflows/publish.yml/badge.svg)](https://github.com/unicolored/liturgia-colors/actions/workflows/publish.yml)
 [![Documentation](https://github.com/unicolored/liturgia-colors/actions/workflows/mkdocs.yml/badge.svg)](https://github.com/unicolored/liturgia-colors/actions/workflows/mkdocs.yml)
-[![npm version](https://badge.fury.io/js/liturgia-colors.svg)](https://www.npmjs.com/liturgia-colors)
+[![npm version](https://badge.fury.io/js/liturgia-colors.svg)](https://www.npmjs.com/package/liturgia-colors)
 
-A vibrant CSS theme infused with the timeless hues of the Roman Church’s liturgical seasons. From the radiant white of Easter joy to the solemn red of martyrs’ blood, Liturgia brings sacred tradition to modern web design, blending elegance and meaning into every shade.
+A CSS theme inspired by the liturgical colours of the Roman Church. From the radiant white of Easter joy to the solemn red of martyrs' blood, Liturgia Colors brings sacred tradition to modern web design.
 
-* Standalone: liturgia-colors.css (3.6KB) — pure CSS vars, themes, and tokens.
-* Tailwind: liturgia.tailwind.css (21KB) — includes Tailwind utilities and typography.
+- **Standalone:** `liturgia.css`, plain CSS custom properties, modes and tokens.
+- **Tailwind:** `liturgia.tailwind.css`, the same theme as Tailwind v4 theme variables, plus typography (`.prose`).
 
-## Installation 
+Documentation: [unicolored.github.io/liturgia-colors](https://unicolored.github.io/liturgia-colors/) · Reference: [SPEC.md](SPEC.md)
 
-### Via NPM
+## Installation
+
+### npm
 
 ```bash
-npm install liturgia-theme
+npm install liturgia-colors
 ```
 
 In your CSS:
 
 ```css
-/* project’s styles.css */
-@import 'liturgia-colors'; /* from node_modules */
-@import './custom.css'; /* for overrides */
+/* styles.css */
+@import 'liturgia-colors/dist/liturgia.css';
+@import './custom.css'; /* your overrides */
 ```
 
-### Via CDN
+### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/liturgia-theme/dist/liturgia.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/liturgia-colors/dist/liturgia.css">
 ```
 
-> Fonts: The CDN version assumes fonts are loaded (e.g., via Google Fonts).
-
-Add <link> tags if needed:
+The theme uses the fonts Cinzel and EB Garamond by default. Load them yourself:
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=EB+Garamond" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=EB+Garamond&display=swap" rel="stylesheet">
 ```
+
+### Tailwind CSS v4
+
+```css
+/* app.css */
+@import 'tailwindcss';
+@import 'liturgia-colors/dist/liturgia.tailwind.css';
+```
+
+The Tailwind build provides theme variables and `.prose` typography. It does not generate utility classes, so use the variables in arbitrary values, for example `bg-(--color-main)` (Tailwind 4.1+).
 
 ## Usage
 
-Apply a mode class to your <body> or a container:
+Apply one mode class to `<body>` or to a container. Albus is the default and needs no class.
 
-* .albus-mode (default): White, purity, joy
-* .ruber-mode: Red, martyrdom, passion
-* .viridis-mode: Green, hope, growth
-* .violaceus-mode: Violet, penance
-* .tenebrae-mode: Black, mourning
-* .roseus-mode: Rose, subtle joy
-
-Example:
+| Class | Mode | Meaning |
+|---|---|---|
+| `.albus-mode` | Albus (White) | Purity, joy |
+| `.roseus-mode` | Roseus (Rose) | Gentle joy |
+| `.ruber-mode` | Ruber (Red) | Blood of martyrs, passion |
+| `.tenebrae-mode` | Tenebrae (Black) | Mourning, remembrance |
+| `.violaceus-mode` | Violaceus (Violet) | Penance, preparation |
+| `.viridis-mode` | Viridis (Green) | Hope, growth |
 
 ```html
 <body class="ruber-mode">
   <div class="prose">
-      <h1>Love this colors!</h1>
+    <h1>Love these colours!</h1>
+    <p>Thanks be to God!</p>
   </div>
-  <button><i class="fa-solid fa-heart"></i> Thanks God!</button>
 </body>
 ```
 
+Use the semantic tokens (`--color-light`, `--color-dark`, `--color-main`, `--color-gray`, `--color-text`, `--color-text-invert`) in your own styles, so your UI follows the active mode.
+
 ## Customization
 
-Let's override the fonts via CDN.
+Override the design and font tokens on `:root`:
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/liturgia-theme/dist/liturgia.css">
-  <style>
-    :root {
-      --font-family-heading: "Roboto", sans-serif;
-      --font-family-paragraph: "Open Sans", sans-serif;
-    }
-  </style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Open+Sans&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-family-heading: "Roboto", sans-serif;
+    --font-family-paragraph: "Open Sans", sans-serif;
+  }
+</style>
 ```
+
+The full list of tokens is in [SPEC.md](SPEC.md#4-tokens).
+
+## Development
+
+Requirements: Node.js and pnpm. The repository pins the pnpm version in `package.json` (`packageManager`), so Corepack (`corepack enable`) selects it automatically.
+
+```bash
+pnpm install
+pnpm build          # dist/liturgia.css
+pnpm build:tailwind # dist/liturgia.tailwind.css
+pnpm check          # Prettier check on src/
+sh script/cibuild.sh # build both files and verify them
+pnpm docs           # serve the documentation locally (requires mkdocs)
+```
+
+Palette values live in `src/liturgia-colors.css`. Do not redefine them in `src/tailwind/`; the Tailwind theme files reference them.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

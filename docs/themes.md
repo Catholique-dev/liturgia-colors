@@ -2,7 +2,7 @@
 
 # Themes
 
-Liturgia Colors has 6 variants that feed the following tokens:
+Liturgia Colors has 6 modes. Each mode sets the following semantic tokens:
 
 ```css
 :root {
@@ -38,6 +38,16 @@ The common tokens are:
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
     --line-width-default: 2px;
+}
+```
+
+The font tokens are:
+
+```css
+:root {
+    /* Font Tokens */
+    --font-family-heading: "Cinzel", serif;
+    --font-family-paragraph: "EB Garamond", serif;
 }
 ```
 

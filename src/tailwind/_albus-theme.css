@@ -13,9 +13,10 @@
   --color-albus-gray-950: #2a2310;
 
   /** Custom **/
-  --color-albus-light: #fef8e9;
-  --color-albus-gray: #8e8877;
-  --color-albus-dark: #1e1805;
+  --color-albus-light: var(--albus-light);
+  --color-albus-gray: var(--albus-gray);
+  --color-albus-dark: var(--albus-dark);
+  --color-albus-main: var(--albus-main);
 
   --color-albus-50: #f9f1d9;
   --color-albus-100: #f5e9ca;

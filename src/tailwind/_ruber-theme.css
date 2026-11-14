@@ -13,9 +13,10 @@
   --color-ruber-gray-950: #2c211f;
 
   /** Custom **/
-  --color-ruber-dark: #211513;
-  --color-ruber-gray: #8f8685;
-  --color-ruber-light: #fdf7f6;
+  --color-ruber-light: var(--ruber-light);
+  --color-ruber-gray: var(--ruber-gray);
+  --color-ruber-dark: var(--ruber-dark);
+  --color-ruber-main: var(--ruber-main);
 
   --color-ruber-50: #fcf4f3;
   --color-ruber-100: #eac8c5;
